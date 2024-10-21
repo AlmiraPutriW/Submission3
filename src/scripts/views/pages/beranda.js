@@ -6,7 +6,8 @@ const beranda = {
     return `
     <section class="hero" id="hero">
     <picture>
-        <source media="(max-width: 600px)" srcset="./heros/hero-image_2-small.jpg">
+        <source media="(max-width: 600px)" srcset="./heros/hero-image_2-small.jpg" alt="Restaurant Hungrybite" class="hero-image" tabindex="0">
+        <source media="(man-width: 600px)" srcset="./heros/hero-image_2-large.jpg" alt="Restaurant Hungrybite" class="hero-image" tabindex="0">
         <img src="./heros/hero-image_2-large.jpg" alt="Restaurant Hungrybite" class="hero-image" tabindex="0">
       </picture>
         <div class="hero-content">
@@ -15,8 +16,8 @@ const beranda = {
 
             <!-- Search Bar -->
             <div class="search-bar">
-                <input type="text" id="search-input" placeholder="Search by city" aria-label="Search for restaurants by city">
-                <button class="search-btn" aria-label="Search restaurants">Search</button>
+                <input type="text" id="search-input" placeholder="Search by city" aria-label="Search for restaurants by city" tabindex="0">
+                <button class="search-btn" aria-label="Search restaurants" tabindex="0">Search</button>
             </div>
         </div>
     </section>
