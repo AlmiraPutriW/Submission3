@@ -22,13 +22,32 @@ class App {
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
-    this._content.innerHTML = await page.render();
-    await page.afterRender();
-    const skipLinkElem = document.querySelector('.skip-link');
-    skipLinkElem.addEventListener('click', (event) => {
-      event.preventDefault();
-      document.querySelector('#mainContent').focus();
-    });
+
+    try {
+      // Render halaman yang sesuai
+      this._content.innerHTML = await page.render();
+      await page.afterRender();
+
+      // Fitur skip to content
+      const skipLinkElem = document.querySelector('.skip-link');
+      if (skipLinkElem) {
+        skipLinkElem.addEventListener('click', (event) => {
+          event.preventDefault();
+          const mainContent = document.querySelector('#mainContent');
+          if (mainContent) {
+            mainContent.focus();
+          }
+        });
+      }
+    } catch (error) {
+      // Error handling: tampilkan pesan kesalahan atau arahkan ke halaman utama
+      console.error(error);
+      this._content.innerHTML = '<h2>Halaman tidak ditemukan atau terjadi kesalahan!</h2>';
+      // Jika ingin mengarahkan pengguna ke halaman utama setelah error
+      setTimeout(() => {
+        window.location.href = '#/home';
+      }, 3000);
+    }
   }
 }
 
