@@ -1,0 +1,387 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  min-height: 100vh;
+  display: grid;
+  grid-auto-flow: row;
+}
+.restaurant-item__header {
+  position: relative;
+}
+
+.city {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  color: white; /* White text */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  z-index: 1; /* Make sure it's above the image */
+}
+.app-bar {
+  padding: 8px 16px;
+  background-color: #333;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.app-bar .app-bar__menu {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar .app-bar__menu button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  padding: 8px;
+  cursor: pointer;
+  display: inline-block;
+  height: 44px;
+  width: 44px;
+}
+
+.app-bar .app-bar__brand {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar .app-bar__brand h1 {
+  color: #db0000;
+  text-transform: uppercase;
+  font-size: 22px;
+  user-select: none;
+}
+
+.app-bar .app-bar__navigation {
+  position: absolute;
+  top: 50px;
+  left: -180px;
+  width: 150px;
+  transition: all 0.3s;
+  padding: 18px;
+  background-color: #363333;
+  overflow: hidden;
+}
+#menu-info {
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between the cards */
+  padding: 20px;
+}
+
+.card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px; /* Set the width for the card */
+}
+
+.card h3 {
+  margin-bottom: 15px;
+}
+
+.card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.card li {
+  margin-bottom: 10px;
+}
+
+.app-bar .app-bar__navigation.open {
+  left: 0;
+}
+
+.app-bar .app-bar__navigation ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 8px;
+  margin-bottom: 5px;
+  width: 100%;
+  height: 44px;
+  align-items: center;
+  line-height: 44px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.app-bar .app-bar__navigation ul li a:focus {
+  outline: 2px solid #fff;
+}
+
+.app-bar .app-bar__navigation ul li a:hover {
+  color: white;
+  background-color: #987070; /* Pastikan variabel hover-color didefinisikan */
+  border-radius: 5px;
+}
+
+
+.skip-link {
+  position: absolute;
+ 
+  padding: 8px;
+   color: white;
+  z-index: 100;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+main {
+  padding: 32px;
+}
+
+.heros {
+  width: 100%;
+  max-height: 500px;
+  margin-bottom: 3em;
+  object-fit: cover;
+}
+#UnavailableFavorite {
+width: 800px;
+height: 800px;
+justify-content: center;
+}
+#UnavailableFavorite > h1 {
+  line-height: 1em;
+  color: #aaaaaa;
+}
+.content {
+  margin: 0 auto;
+}
+
+.content .content__heading {
+  font-weight: normal;
+}
+
+
+
+.restaurants {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.restaurant-item {
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.restaurant-item__header {
+  position: relative;
+}
+
+.restaurant-item .restaurant-item__header .restaurant-item__header__poster {
+  width: 100%;
+}
+
+.restaurant-item .restaurant-item__header .restaurant-item__header__rating {
+  position: absolute;
+  padding: 8px;
+  bottom: 20px;
+  left: 0;
+  display: inline-block;
+  background-color: black;
+  color: white;
+}
+
+.restaurant-item .restaurant-item__header .restaurant-item__header__rating .restaurant-item__header__rating__score {
+  margin-left: 10px;
+}
+
+.restaurant-item .restaurant-item__content {
+  padding: 16px;
+}
+
+.restaurant-item .restaurant-item__content h3 {
+  margin: 0 0 10px 0;
+}
+
+.restaurant-item .restaurant-item__content h3 {
+  color: #db0000;
+  text-decoration: none;
+}
+.restaurant-item .restaurant-item__content button {
+  padding: 5px;
+  border: #ffffff00;
+  cursor: pointer;
+  border-radius: 5px;
+  display: inline-block;
+  width: 100%;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  margin-top: 2em;
+}
+
+.restaurant-item .restaurant-item__content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+  
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+
+#restaurant-detail {
+  display: grid;
+  grid-template-rows: 1fr;
+  row-gap: 30px;
+}
+.img-detail {
+  width: 100%;
+  max-height: 800px;
+}
+#restaurant-info{
+  display: grid;
+  grid-template-rows: 1fr;
+}
+div > .menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+div > .menu > ul {
+  list-style-position: inside;
+}
+#section-ulasan {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.container-ulasan {
+  display: grid;
+  grid-template-rows: 1fr;
+  row-gap: 2em;
+}
+
+form {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 10px;
+  padding: 20px;
+  background-color: #b99494;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan untuk memberi kedalaman */
+}
+
+#pendapat > form > input {
+  display: inline-block;
+  width: 50%;
+  line-height: 3em;
+  height: 44px;
+  min-height: 44px;
+  padding: 0 10px;
+  border: 1px solid #ddd; /* Border halus */
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#pendapat > form > input:focus {
+  border-color: #ffffff;
+  outline: none;
+  box-shadow: 0 0 5px #b99494;
+}
+
+#pendapat > textarea {
+  width: 50%;
+  height: 5em;
+  min-height: 44px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  box-shadow: 0 0 5px #b99494;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#pendapat > textarea:focus {
+  border-color: #987070;
+  outline: none;
+  box-shadow: 0 0 5px rgba(170, 93, 93, 0.5);
+}
+
+button.kirim-ulasan {
+  width: 100%;
+  line-height: 2em;
+  height: 44px;
+  padding: 10px;
+  background-color: #724545; /* Warna biru */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.kirim-ulasan:hover {
+  background-color: #422e2e; /* Warna saat hover */
+  transform: scale(1.05); /* Sedikit pembesaran untuk efek hover */
+}
+
+button.kirim-ulasan:active {
+  background-color: #422e2e;
+  transform: scale(1); /* Kembali ke ukuran normal saat ditekan */
+}
+
+
+footer {
+  padding: 16px;
+}
+
+footer p {
+  text-align: center;
+  color: #aaaaaa;
+}
+
+footer p a {
+  color: #db0000;
+  text-decoration: none;
+  display: inline-block;
+  height: 44px;
+}
