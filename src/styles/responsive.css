@@ -76,3 +76,8 @@
     grid-template-columns: repeat(5, 1fr);
   }
 }
+@media (max-width: 320px) {
+  main {
+    padding: 10px; /* atau 0px jika ingin menghapus padding sepenuhnya */
+  }
+}
