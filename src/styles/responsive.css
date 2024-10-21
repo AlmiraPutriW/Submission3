@@ -81,3 +81,26 @@
     padding: 10px; /* atau 0px jika ingin menghapus padding sepenuhnya */
   }
 }
+@media (max-width: 768px) {
+  #UnavailableFavorite {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  #UnavailableFavorite > h1 {
+    font-size: 1.5rem; /* Ukuran font lebih kecil untuk tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  #UnavailableFavorite {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+  }
+
+  #UnavailableFavorite > h1 {
+    font-size: 1.2rem; /* Ukuran font lebih kecil untuk layar ponsel */
+  }
+}
