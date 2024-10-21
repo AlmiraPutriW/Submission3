@@ -70,26 +70,26 @@ const createRestaurantItemTemplate = (restaurant) => `
     <div class="restaurant-item__content">
         <h3 tabindex="0">${restaurant.name}</h3>
         <p tabindex="0">${restaurant.description}</p>
-        <button onclick="location.href='${`#/detail/${restaurant.id}`}'" type="button" aria-label="lihat lebih detail">Lihat</button>
+        <button onclick="location.href='${`#/detail/${restaurant.id}`}'" type="button" aria-label="lihat lebih detail" tabindex="0">Lihat</button>
         </div>
   </div>
   `;
 
 const createLikeButtonTemplate = () => `
-  <button aria-label="like this restaurant" id="likeButton" class="like">
-     <i class="fa fa-heart-o" aria-hidden="true"></i>
+  <button aria-label="like this restaurant" id="likeButton" class="like" tabindex="0">
+     <i class="fa fa-heart-o" aria-hidden="true" tabindex="0"></i>
   </button>
 `;
 
 const createLikedButtonTemplate = () => `
-  <button aria-label="unlike this restaurant" id="likeButton" class="like">
-    <i class="fa fa-heart" aria-hidden="true"></i>
+  <button aria-label="unlike this restaurant" id="likeButton" class="like" tabindex="0">
+    <i class="fa fa-heart" aria-hidden="true" tabindex="0"></i>
   </button>
 `;
 
 const createUnavailableFavorite = () => `
-      <div id="UnavailableFavorite">
-      <h1 class="favorite-restaurant-not-found">Belum Ada Restoran Favorit Kamu</h1>
+      <div id="UnavailableFavorite" tabindex="0">
+      <h1 class="favorite-restaurant-not-found" tabindex="0">Belum Ada Restoran Favorit Kamu</h1>
       </div>
 `;
 
