@@ -5,8 +5,8 @@ const Favorite = {
   async render() {
     return `     
          <div class="content">
-        <h2 class="content__heading" id="maincontent">Daftar Restaurant Favorite</h2>
-        <div id="restaurants" class="restaurants">
+        <h2 class="content__heading" id="maincontent" tabindex="0">Daftar Restaurant Favorite</h2>
+        <div id="restaurants" class="restaurants" tabindex="0">
         </div>
       </div>`;
   },
